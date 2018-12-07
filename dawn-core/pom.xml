@@ -29,7 +29,7 @@
 				<groupId>de-slag-base</groupId>
 				<artifactId>base-tools</artifactId>
 				<version>0.0.1-SNAPSHOT</version>
-				<scope>runtime</scope>
+	<!-- 			<scope>runtime</scope> -->
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
