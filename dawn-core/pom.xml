@@ -19,21 +19,19 @@
 		<module>dawn-core-persist</module>
 	</modules>
 	<properties>
-		<de.slag.base.version>0.0.1-SNAPSHOT</de.slag.base.version>
+		<de.slag.base.version>0.1.0</de.slag.base.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>de-slag-base</groupId>
 				<artifactId>base-features</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
-				<!-- <scope>runtime</scope> -->
+				<version>${de.slag.base.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>de-slag-base</groupId>
 				<artifactId>base-tools</artifactId>
-				<version>0.0.1-SNAPSHOT</version>
-	<!-- 			<scope>runtime</scope> -->
+				<version>${de.slag.base.version}</version>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
