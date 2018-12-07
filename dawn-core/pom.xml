@@ -1,15 +1,36 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <parent>
-    <groupId>de-slag-dawn-root</groupId>
-    <artifactId>dawn-root</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
-  </parent>
-  <groupId>de-slag-dawn-core</groupId>
-  <artifactId>dawn-core</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  <packaging>pom</packaging>
-  <modules>
-  	<module>dawn-base-tools</module>
-  </modules>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>de-slag-dawn-root</groupId>
+		<artifactId>dawn-root</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	<groupId>de-slag-dawn-core</groupId>
+	<artifactId>dawn-core</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<modules>
+		<module>dawn-core-apps</module>
+	</modules>
+	<properties>
+		<de.slag.base.version>0.0.1-SNAPSHOT</de.slag.base.version>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>de-slag-base</groupId>
+				<artifactId>base-features</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<!-- <scope>runtime</scope> -->
+			</dependency>
+			<dependency>
+				<groupId>de-slag-base</groupId>
+				<artifactId>base-tools</artifactId>
+				<version>0.0.1-SNAPSHOT</version>
+				<scope>runtime</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>

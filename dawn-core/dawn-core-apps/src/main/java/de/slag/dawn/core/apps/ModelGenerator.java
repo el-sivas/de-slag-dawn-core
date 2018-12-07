@@ -1,4 +1,4 @@
-package de.slag.base.apps;
+package de.slag.dawn.core.apps;
 
 import java.io.IOException;
 import java.nio.file.Files;
@@ -10,6 +10,7 @@ import java.util.Collections;
 import org.apache.commons.lang3.StringUtils;
 
 import de.slag.base.BaseException;
+
 
 public class ModelGenerator {
 
