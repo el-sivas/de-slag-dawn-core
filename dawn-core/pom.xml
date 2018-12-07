@@ -13,6 +13,10 @@
 	<packaging>pom</packaging>
 	<modules>
 		<module>dawn-core-apps</module>
+		<module>dawn-core-data</module>
+		<module>dawn-core-service</module>
+		<module>dawn-core-logic</module>
+		<module>dawn-core-persist</module>
 	</modules>
 	<properties>
 		<de.slag.base.version>0.0.1-SNAPSHOT</de.slag.base.version>
