@@ -14,8 +14,9 @@
 	</properties>
 	<dependencies>
 		<dependency>
-			<groupId>de-slag-base</groupId>
-			<artifactId>base-tools</artifactId>
+			<groupId>de-slag-dawn-core</groupId>
+			<artifactId>dawn-core-utils</artifactId>
+			<version>${project.version}</version>
 		</dependency>
 
 		<dependency>

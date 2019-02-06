@@ -18,6 +18,8 @@
 		<module>dawn-core-logic</module>
 		<module>dawn-core-persist</module>
 		<module>dawn-core-utils</module>
+		<module>core-features</module>
+		<module>dawn-core-features</module>
 	</modules>
 	<properties>
 		<de.slag.base.version>0.1.0</de.slag.base.version>

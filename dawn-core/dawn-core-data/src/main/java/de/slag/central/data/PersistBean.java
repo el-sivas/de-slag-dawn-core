@@ -10,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.MappedSuperclass;
 
-import de.slag.base.features.SlagConstants;
-import de.slag.base.tools.DateUtils;
+import de.slag.dawn.core.features.SlagConstants;
+import de.slag.dawn.core.utils.DateUtils;
 
 @MappedSuperclass
 public abstract class PersistBean {

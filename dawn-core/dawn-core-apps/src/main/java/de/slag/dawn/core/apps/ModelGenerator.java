@@ -9,7 +9,8 @@ import java.util.Collections;
 
 import org.apache.commons.lang3.StringUtils;
 
-import de.slag.base.BaseException;
+import de.slag.dawn.core.utils.BaseException;
+
 
 
 public class ModelGenerator {
