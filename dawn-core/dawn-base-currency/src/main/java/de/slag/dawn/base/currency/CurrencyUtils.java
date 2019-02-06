@@ -1,5 +1,6 @@
 package de.slag.dawn.base.currency;
 
+import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -21,6 +22,8 @@ public class CurrencyUtils {
 	private static final Log LOG = LogFactory.getLog(CurrencyUtils.class);
 
 	private static Map<CurrencyUnit, CurrencyConversion> conversions = new HashMap<>();
+
+	private static Map<CurrencyUnit, LocalDateTime> lastUpdate = new HashMap<>();
 
 	private static double ZERO = Double.valueOf(0);
 
@@ -70,7 +73,7 @@ public class CurrencyUtils {
 	}
 
 	public static CurrencyConversion getConversion(CurrencyUnit currency) {
-		if (!conversions.containsKey(currency)) {
+		if (!conversions.containsKey(currency) || isOutdated(currency)) {
 
 			LOG.debug(MonetaryConversions.getDefaultConversionProviderChain());
 
@@ -81,13 +84,26 @@ public class CurrencyUtils {
 				throw new RuntimeException(e);
 			}
 			conversions.put(currency, MonetaryConversions.getConversion(currency));
+			lastUpdate.put(currency, LocalDateTime.now());
 		}
 		return conversions.get(currency);
 	}
 
+	private static boolean isOutdated(CurrencyUnit currency) {
+		final LocalDateTime lastUpdated = lastUpdate.get(currency);
+		if (lastUpdated == null) {
+			return true;
+		}
+
+		if (lastUpdated.isBefore(LocalDateTime.now().minusDays(1))) {
+			return true;
+		}
+		return false;
+	}
+
 	public static MonetaryAmount toAmount(String amountAsString) {
 		if (StringUtils.isEmpty(amountAsString)) {
-			return null;			
+			return null;
 		}
 		final String[] split = amountAsString.split(" ");
 		final CurrencyUnit currency = currency(split[0]);
