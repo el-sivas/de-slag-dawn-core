@@ -89,10 +89,9 @@ public class CurrencyUtils {
 		if (StringUtils.isEmpty(amountAsString)) {
 			return null;			
 		}
-		String[] split = amountAsString.split(" ");
-		String curr = split[0];
-		CurrencyUnit currency = currency(curr);
-		Double valueOf = Double.valueOf(split[1]);
+		final String[] split = amountAsString.split(" ");
+		final CurrencyUnit currency = currency(split[0]);
+		final Double valueOf = Double.valueOf(split[1]);
 		return newAmount(valueOf, currency);
 	}
 
