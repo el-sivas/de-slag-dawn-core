@@ -1,7 +1,6 @@
 package de.slag.dawn.base.currency;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
@@ -11,7 +10,15 @@ import javax.money.MonetaryAmount;
 import javax.money.convert.CurrencyConversion;
 import javax.money.convert.MonetaryConversions;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
 public class CurrencyUtils {
+
+	private static final String EUR = "EUR";
+
+	private static final Log LOG = LogFactory.getLog(CurrencyUtils.class);
 
 	private static Map<CurrencyUnit, CurrencyConversion> conversions = new HashMap<>();
 
@@ -30,7 +37,12 @@ public class CurrencyUtils {
 	}
 
 	public static CurrencyUnit defaultCurrency() {
-		return currency("EUR");
+		final String property = System.getProperty("DefaultCurrency");
+		if (property == null) {
+			LOG.debug("No default currency found. Use: " + EUR);
+			return currency(EUR);
+		}
+		return currency(property);
 	}
 
 	public static CurrencyUnit currency(String currency) {
@@ -60,7 +72,7 @@ public class CurrencyUtils {
 	public static CurrencyConversion getConversion(CurrencyUnit currency) {
 		if (!conversions.containsKey(currency)) {
 
-			List<String> defaultConversionProviderChain = MonetaryConversions.getDefaultConversionProviderChain();
+			LOG.debug(MonetaryConversions.getDefaultConversionProviderChain());
 
 			// warten vor der Abfrage. Dauert manchmal etwas.
 			try {
@@ -71,6 +83,17 @@ public class CurrencyUtils {
 			conversions.put(currency, MonetaryConversions.getConversion(currency));
 		}
 		return conversions.get(currency);
+	}
+
+	public static MonetaryAmount toAmount(String amountAsString) {
+		if (StringUtils.isEmpty(amountAsString)) {
+			return null;			
+		}
+		String[] split = amountAsString.split(" ");
+		String curr = split[0];
+		CurrencyUnit currency = currency(curr);
+		Double valueOf = Double.valueOf(split[1]);
+		return newAmount(valueOf, currency);
 	}
 
 }

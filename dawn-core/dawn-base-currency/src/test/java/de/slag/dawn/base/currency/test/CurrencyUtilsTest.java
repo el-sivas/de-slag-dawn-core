@@ -25,6 +25,8 @@ public class CurrencyUtilsTest {
 		
 		MonetaryAmount add2 = CurrencyUtils.add(add, CurrencyUtils.newAmount(2, "USD"));
 		
+		CurrencyUtils.toAmount(add2.toString());
+		
 		
 	
 	}
