@@ -5,7 +5,7 @@
 	<parent>
 		<groupId>de-slag-dawn-root</groupId>
 		<artifactId>dawn-root</artifactId>
-		<version>0.0.2</version>
+		<version>1.0.2-SNAPSHOT</version>
 	</parent>
 	<groupId>de-slag-dawn-core</groupId>
 	<artifactId>dawn-core</artifactId>
@@ -17,6 +17,7 @@
 		<module>dawn-core-service</module>
 		<module>dawn-core-logic</module>
 		<module>dawn-core-persist</module>
+		<module>dawn-core-utils</module>
 	</modules>
 	<properties>
 		<de.slag.base.version>0.1.0</de.slag.base.version>
