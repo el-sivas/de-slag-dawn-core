@@ -1,30 +1,30 @@
-package de.slag.dawn.core.utils;
+package de.slag.dawn.base.utils;
 
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.function.Supplier;
+import java.util.function.Consumer;
 
 
 
-public class PropertyGetter {
+public class PropertySetter {
 
-	private final Supplier<Object> getter;
+	private final Consumer<Object> setter;
 
 	private final String name;
 
 	private final Class<?> type;
 
-	public PropertyGetter(String name, Method getterMethod, Object object, Class<?> type) {
+	public PropertySetter(String name, Method setterMethod, Object object, Class<?> type) {
 		this.type = type;
 		this.name = name;
-		this.getter = new Supplier<Object>() {
+		this.setter = new Consumer<Object>() {
 
 			@Override
-			public Object get() {
+			public void accept(Object value) {
 				try {
-					return getterMethod.invoke(object);
+					setterMethod.invoke(object, value);
 				} catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e) {
 					throw new BaseException(e);
 				}
@@ -32,29 +32,28 @@ public class PropertyGetter {
 		};
 	}
 
-	public PropertyGetter(String name, Field field, Object object, Class<?> type) {
+	public PropertySetter(String name, Field field, Object object, Class<?> type) {
 		this.type = type;
 		this.name = name;
-		this.getter = new Supplier<Object>() {
+		this.setter = new Consumer<Object>() {
 
 			@Override
-			public Object get() {
+			public void accept(Object value) {
 				field.setAccessible(true);
 				try {
-					return field.get(object);
+					field.set(object, value);
 				} catch (IllegalArgumentException | IllegalAccessException e) {
 					throw new BaseException(e);
-				} finally {
-					field.setAccessible(false);
 				}
+				field.setAccessible(false);
 			}
 		};
 	}
 
-	public Object get() {
-		return getter.get();
+	public void set(Object value) {
+		setter.accept(value);
 	}
-	
+
 	public Class<?> getType() {
 		return type;
 	}

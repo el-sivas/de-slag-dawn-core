@@ -1,4 +1,4 @@
-package de.slag.dawn.core.utils;
+package de.slag.dawn.base.utils;
 
 
 public interface Labelable {
