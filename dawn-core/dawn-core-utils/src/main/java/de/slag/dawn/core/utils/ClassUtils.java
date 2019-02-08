@@ -1,4 +1,4 @@
-package de.slag.dawn.base.utils;
+package de.slag.dawn.core.utils;
 
 
 import java.util.ArrayList;
