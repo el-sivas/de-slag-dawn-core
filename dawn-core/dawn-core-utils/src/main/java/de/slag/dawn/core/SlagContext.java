@@ -1,4 +1,4 @@
-package de.slag.dawn.base.features;
+package de.slag.dawn.core;
 
 import java.util.Set;
 
@@ -10,6 +10,8 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider;
 import org.springframework.core.type.filter.AnnotationTypeFilter;
 import org.springframework.stereotype.Service;
+
+import de.slag.dawn.base.features.SlagContextException;
 
 public class SlagContext {
 
