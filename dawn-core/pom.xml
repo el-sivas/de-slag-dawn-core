@@ -22,6 +22,7 @@
 		<module>dawn-core-features</module>
 		<module>dawn-base-currency</module>
 		<module>dawn-base-utils</module>
+		<module>dawn-base-features</module>
 	</modules>
 	<properties>
 		<de.slag.base.version>0.1.0</de.slag.base.version>
