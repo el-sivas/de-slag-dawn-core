@@ -15,7 +15,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>de-slag-dawn-core</groupId>
-			<artifactId>dawn-core-utils</artifactId>
+			<artifactId>dawn-base-utils</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 
