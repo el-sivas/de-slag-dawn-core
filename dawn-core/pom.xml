@@ -16,7 +16,6 @@
 		<module>dawn-core-data</module>
 		<module>dawn-core-service</module>
 		<module>dawn-core-logic</module>
-		<module>dawn-core-persist</module>
 		<module>dawn-core-utils</module>
 		<module>dawn-base-currency</module>
 		<module>dawn-base-utils</module>
