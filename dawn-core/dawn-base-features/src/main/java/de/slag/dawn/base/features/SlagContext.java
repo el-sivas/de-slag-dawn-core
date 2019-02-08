@@ -1,4 +1,4 @@
-package de.slag.dawn.core.features;
+package de.slag.dawn.base.features;
 
 import java.util.Set;
 
