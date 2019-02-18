@@ -18,7 +18,7 @@
 		<module>dawn-core-logic</module>
 		<module>dawn-core-utils</module>
 		<module>dawn-base-currency</module>
-		<module>core-logic</module>
+		<module>dawn-core-logic</module>
 	</modules>
 	<properties>
 		<de.slag.base.version>0.1.1-SNAPSHOT</de.slag.base.version>
