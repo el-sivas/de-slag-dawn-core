@@ -20,8 +20,6 @@
 		<module>dawn-base-currency</module>
 		<module>dawn-base-utils</module>
 		<module>dawn-base-features</module>
-		<module>dawn-core-persist</module>
-		<module>dawn-core-features</module>
 		<module>dawn-core-logic</module>
 	</modules>
 	<properties>
