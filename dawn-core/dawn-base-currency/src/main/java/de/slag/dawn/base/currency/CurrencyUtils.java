@@ -17,15 +17,15 @@ import org.apache.commons.logging.LogFactory;
 
 public class CurrencyUtils {
 
-	private static final String EUR = "EUR";
-
 	private static final Log LOG = LogFactory.getLog(CurrencyUtils.class);
 
-	private static Map<CurrencyUnit, CurrencyConversion> conversions = new HashMap<>();
+	private static final String EUR = "EUR";
 
-	private static Map<CurrencyUnit, LocalDateTime> lastUpdate = new HashMap<>();
+	private static final double ZERO = Double.valueOf(0);
+	
+	private static final Map<CurrencyUnit, CurrencyConversion> CONVERSIONS = new HashMap<>();
 
-	private static double ZERO = Double.valueOf(0);
+	private static final Map<CurrencyUnit, LocalDateTime> LAST_UPDATE = new HashMap<>();
 
 	public static MonetaryAmount newAmount() {
 		return newAmount(ZERO, defaultCurrency());
@@ -73,7 +73,7 @@ public class CurrencyUtils {
 	}
 
 	public static CurrencyConversion getConversion(CurrencyUnit currency) {
-		if (!conversions.containsKey(currency) || isOutdated(currency)) {
+		if (!CONVERSIONS.containsKey(currency) || isOutdated(currency)) {
 
 			LOG.debug(MonetaryConversions.getDefaultConversionProviderChain());
 
@@ -83,14 +83,14 @@ public class CurrencyUtils {
 			} catch (InterruptedException e) {
 				throw new RuntimeException(e);
 			}
-			conversions.put(currency, MonetaryConversions.getConversion(currency));
-			lastUpdate.put(currency, LocalDateTime.now());
+			CONVERSIONS.put(currency, MonetaryConversions.getConversion(currency));
+			LAST_UPDATE.put(currency, LocalDateTime.now());
 		}
-		return conversions.get(currency);
+		return CONVERSIONS.get(currency);
 	}
 
 	private static boolean isOutdated(CurrencyUnit currency) {
-		final LocalDateTime lastUpdated = lastUpdate.get(currency);
+		final LocalDateTime lastUpdated = LAST_UPDATE.get(currency);
 		if (lastUpdated == null) {
 			return true;
 		}
