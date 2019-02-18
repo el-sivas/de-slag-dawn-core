@@ -5,7 +5,11 @@
 	<parent>
 		<groupId>de-slag-dawn-root</groupId>
 		<artifactId>dawn-root</artifactId>
+<<<<<<< HEAD
 		<version>1.0.2-SNAPSHOT</version>
+=======
+		<version>1.0.1</version>
+>>>>>>> refs/heads/master-
 	</parent>
 	<groupId>de-slag-dawn-core</groupId>
 	<artifactId>dawn-core</artifactId>
@@ -22,7 +26,7 @@
 		<module>dawn-base-features</module>
 	</modules>
 	<properties>
-		<de.slag.base.version>0.1.0</de.slag.base.version>
+		<de.slag.base.version>0.1.1-SNAPSHOT</de.slag.base.version>
 	</properties>
 	<dependencyManagement>
 		<dependencies>
