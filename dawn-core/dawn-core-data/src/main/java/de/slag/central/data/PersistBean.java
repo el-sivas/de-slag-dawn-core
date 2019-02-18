@@ -14,7 +14,7 @@ import de.slag.dawn.base.features.SlagConstants;
 import de.slag.dawn.base.utils.DateUtils;
 
 @MappedSuperclass
-public abstract class PersistBean {
+public abstract class PersistBean implements ElsePropertiesEntity {
 
 	private static final String ELSE_ATTRIBUTE_SEPARATOR = ";";
 
