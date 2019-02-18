@@ -16,9 +16,9 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.engine.jdbc.env.spi.JdbcEnvironment;
 
-import de.slag.dawn.base.config.DatabaseConfig;
-import de.slag.dawn.base.config.SlagConfigSupport;
-import de.slag.dawn.core.utils.ClassUtils;
+import de.slag.core.logic.config.DatabaseConfig;
+import de.slag.core.logic.config.SlagConfigSupport;
+import de.slag.core.logic.utils.ClassUtils;
 
 public class SimpleHibernateSupport {
 	

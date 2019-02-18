@@ -10,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.MappedSuperclass;
 
-import de.slag.dawn.base.features.SlagConstants;
-import de.slag.dawn.base.utils.DateUtils;
+import de.slag.core.logic.feature.SlagConstants;
+import de.slag.core.logic.utils.DateUtils;
 
 @MappedSuperclass
 public abstract class PersistBean implements ElseAttributesEntity {

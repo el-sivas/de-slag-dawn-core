@@ -9,7 +9,7 @@ import java.util.Collections;
 
 import org.apache.commons.lang3.StringUtils;
 
-import de.slag.dawn.base.utils.BaseException;
+import de.slag.core.logic.utils.BaseException;
 
 
 
