@@ -1,7 +1,6 @@
 package de.slag.central.data;
 
 import java.util.Date;
-import java.util.function.Function;
 
 import javax.persistence.Column;
 import javax.persistence.GeneratedValue;
@@ -10,8 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.MappedSuperclass;
 
-import de.slag.core.logic.feature.SlagConstants;
-import de.slag.core.logic.utils.DateUtils;
+import de.slag.root.base.SlagConstants;
 
 @MappedSuperclass
 public abstract class PersistBean implements ElseAttributesEntity {

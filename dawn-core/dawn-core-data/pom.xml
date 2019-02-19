@@ -14,6 +14,10 @@
 	</properties>
 	<dependencies>
 		<dependency>
+			<groupId>de-slag-dawn-root</groupId>
+			 <artifactId>dawn-root-base</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>de-slag-dawn-core</groupId>
 			<artifactId>dawn-base-features</artifactId>
 			<version>${project.version}</version>
