@@ -9,8 +9,8 @@ import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ClassPathScanningCandidateComponentProvider;
 import org.springframework.core.type.filter.AnnotationTypeFilter;
+import org.springframework.stereotype.Service;
 
-import de.slag.core.logic.Service;
 import de.slag.core.logic.feature.SlagContextException;
 
 public class SlagContext {
