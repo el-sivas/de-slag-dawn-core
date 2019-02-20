@@ -15,13 +15,6 @@
 		<module>dawn-core-data</module>
 		<module>dawn-core-logic</module>
 		
-
-		<module>dawn-core-utils</module>
-		<module>dawn-core-service</module>
-		<module>dawn-base-utils</module>
-		<module>dawn-core-apps</module>
-		<module>dawn-base-features</module>
-		<module>dawn-base-currency</module>
 	</modules>
 	<properties>
 		<de.slag.base.version>0.1.1-SNAPSHOT</de.slag.base.version>
