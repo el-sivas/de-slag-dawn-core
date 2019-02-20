@@ -1,4 +1,4 @@
-package de.slag.dawn.core.data;
+package de.slag.dawn.core.persist;
 
 import java.math.MathContext;
 import java.math.RoundingMode;

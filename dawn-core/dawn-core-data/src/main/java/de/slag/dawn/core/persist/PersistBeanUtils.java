@@ -1,4 +1,4 @@
-package de.slag.dawn.core.data;
+package de.slag.dawn.core.persist;
 
 import java.util.Arrays;
 import java.util.List;
