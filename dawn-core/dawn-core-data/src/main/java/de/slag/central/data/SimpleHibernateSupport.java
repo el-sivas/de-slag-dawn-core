@@ -1,11 +1,8 @@
 package de.slag.central.data;
 
 import java.util.Collection;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
 
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.Session;
@@ -16,9 +13,9 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.engine.jdbc.env.spi.JdbcEnvironment;
 
-import de.slag.core.logic.config.DatabaseConfig;
-import de.slag.core.logic.config.SlagConfigSupport;
-import de.slag.core.logic.utils.ClassUtils;
+import de.slag.central.ClassUtils;
+import de.slag.root.base.DatabaseConfig;
+import de.slag.root.base.SlagConfigSupport;
 
 public class SimpleHibernateSupport {
 	

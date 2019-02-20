@@ -11,6 +11,8 @@ import java.util.stream.Collectors;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
+import de.slag.root.base.BaseException;
+
 public class FieldMappingUtils {
 
 	private static final Log LOG = LogFactory.getLog(FieldMappingUtils.class);

@@ -1,7 +1,5 @@
 package de.slag.dawn.core.logic.utils.test;
 
-import java.util.Currency;
-
 import javax.money.CurrencyUnit;
 import javax.money.Monetary;
 import javax.money.MonetaryAmount;

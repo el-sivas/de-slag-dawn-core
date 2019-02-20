@@ -1,4 +1,4 @@
-package de.slag.core.logic.utils;
+package de.slag.central;
 
 
 import java.util.ArrayList;

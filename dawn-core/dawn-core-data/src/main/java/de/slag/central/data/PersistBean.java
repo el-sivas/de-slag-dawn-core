@@ -9,6 +9,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.MappedSuperclass;
 
+import de.slag.root.base.DateUtils;
 import de.slag.root.base.SlagConstants;
 
 @MappedSuperclass

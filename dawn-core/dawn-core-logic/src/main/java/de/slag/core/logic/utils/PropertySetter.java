@@ -6,6 +6,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.function.Consumer;
 
+import de.slag.root.base.BaseException;
+
 
 
 public class PropertySetter {

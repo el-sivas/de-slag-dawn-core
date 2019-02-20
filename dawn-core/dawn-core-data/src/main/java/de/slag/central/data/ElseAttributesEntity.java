@@ -7,7 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Map;
 
-import de.slag.core.logic.utils.KeyValueUtils;
+import de.slag.root.base.KeyValueUtils;
 
 public interface ElseAttributesEntity {
 

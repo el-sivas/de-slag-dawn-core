@@ -15,8 +15,13 @@
 	<dependencies>
 		<dependency>
 			<groupId>de-slag-dawn-root</groupId>
-			 <artifactId>dawn-root-base</artifactId>
+			<artifactId>dawn-root-base</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>commons-logging</groupId>
+			<artifactId>commons-logging</artifactId>
+		</dependency>
+
 		<dependency>
 			<groupId>de-slag-dawn-core</groupId>
 			<artifactId>dawn-base-features</artifactId>
