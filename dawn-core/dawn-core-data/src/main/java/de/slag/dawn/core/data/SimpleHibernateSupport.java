@@ -1,4 +1,4 @@
-package de.slag.central.data;
+package de.slag.dawn.core.data;
 
 import java.util.Collection;
 import java.util.HashMap;
@@ -13,7 +13,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.engine.jdbc.env.spi.JdbcEnvironment;
 
-import de.slag.central.ClassUtils;
+import de.slag.dawn.core.ClassUtils;
 import de.slag.root.base.DatabaseConfig;
 import de.slag.root.base.SlagConfigSupport;
 

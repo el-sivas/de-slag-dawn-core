@@ -1,4 +1,4 @@
-package de.slag.central.data;
+package de.slag.dawn.core.data;
 
 import java.util.Date;
 

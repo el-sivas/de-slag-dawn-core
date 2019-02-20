@@ -6,6 +6,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import de.slag.root.base.Labelable;
+
 public interface MessageCacheable extends Labelable {
 	
 	void append(String message);
