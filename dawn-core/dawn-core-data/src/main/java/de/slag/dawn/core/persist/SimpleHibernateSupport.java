@@ -3,6 +3,7 @@ package de.slag.dawn.core.persist;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
@@ -12,6 +13,7 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.boot.model.naming.Identifier;
 import org.hibernate.boot.model.naming.PhysicalNamingStrategy;
+import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.engine.jdbc.env.spi.JdbcEnvironment;
@@ -40,10 +42,11 @@ public class SimpleHibernateSupport {
 
 	public static void validateDatabase(final DatabaseConfig dbConfig) {
 		try (final Session session = createSessionFactory(configuration(dbConfig, "validate")).openSession()) {
+			final boolean connected = session.isConnected();
 			// done
 		}
 	}
-	
+
 	public static void updateDatabase(final DatabaseConfig dbConfig) {
 		try (final Session session = createSessionFactory(configuration(dbConfig, "update")).openSession()) {
 			// done
@@ -62,8 +65,9 @@ public class SimpleHibernateSupport {
 	private static SessionFactory createSessionFactory(final Configuration configuration) {
 		final Collection<Class> findAnnotatedClasses = findAnnotatedClasses();
 		findAnnotatedClasses.forEach(c -> configuration.addAnnotatedClass(c));
-		return configuration.buildSessionFactory(
-				new StandardServiceRegistryBuilder().applySettings(configuration.getProperties()).build());
+		final Properties properties = configuration.getProperties();
+		final StandardServiceRegistry build = new StandardServiceRegistryBuilder().applySettings(properties).build();
+		return configuration.buildSessionFactory(build);
 	}
 
 	private static Collection<Class> findAnnotatedClasses() {
@@ -87,7 +91,6 @@ public class SimpleHibernateSupport {
 
 		if (StringUtils.isNotBlank(hbm2ddl)) {
 			configuration.setProperty("hibernate.hbm2ddl.auto", hbm2ddl);
-			wieso funktioniert das hier nicht?
 		}
 
 		configuration.setPhysicalNamingStrategy(getNamingStrategy());
