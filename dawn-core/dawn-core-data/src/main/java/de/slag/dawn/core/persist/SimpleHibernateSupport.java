@@ -1,13 +1,18 @@
 package de.slag.dawn.core.persist;
 
+import java.math.BigInteger;
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Properties;
+import java.util.stream.Collectors;
 
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.hibernate.Hibernate;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -17,6 +22,8 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.engine.jdbc.env.spi.JdbcEnvironment;
+import org.hibernate.query.NativeQuery;
+import org.hibernate.query.Query;
 
 import de.slag.dawn.core.ClassUtils;
 import de.slag.root.base.DatabaseConfig;
@@ -136,5 +143,19 @@ public class SimpleHibernateSupport {
 				return Identifier.toIdentifier(newName);
 			}
 		};
+
+	}
+
+	public static class HqlSupport {		
+		public static Collection<Long> selectIds(Session session, Class<? extends PersistBean> beanClass, String where) {
+			final String sql = "select id from " + beanClass.getName() + (StringUtils.isBlank(where) ? "" : (" " + where));
+			final Query query = session.createQuery(sql);
+			final List<Object> list = query.list();
+			return list.stream().map(id -> (Long) id).collect(Collectors.toList());
+		}
+
+		public static Collection<Long> selectIds(Session session, Class<? extends PersistBean> beanClass) {
+			return selectIds(session, beanClass, "");
+		}
 	}
 }

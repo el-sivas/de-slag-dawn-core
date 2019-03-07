@@ -8,6 +8,10 @@ public interface BusinessService<M extends ModelBean> {
 
 	void delete(M bean);
 
-	M loadById(Long bean);
+	M create(CreateCredentials<M> credentials);
+
+	default M create() {
+		return create(null);
+	}
 
 }

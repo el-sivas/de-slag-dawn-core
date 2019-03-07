@@ -149,4 +149,12 @@ public class ReflectionUtils {
 
 		return getters;
 	}
+	
+	public static Field field(Class c, String name) {
+		try {
+			return c.getDeclaredField(name);
+		} catch (NoSuchFieldException | SecurityException e) {
+			throw new BaseException(e);
+		}
+	}
 }
